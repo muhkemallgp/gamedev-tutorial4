@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wh7l76mi0pv2"]
+
+[ext_resource type="Texture2D" uid="uid://bpomp7laf2qmf" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue_dead.png" id="1_cabkx"]
+[ext_resource type="Script" uid="uid://bs5bo7qavonft" path="res://scenes/enemies_dead.gd" id="1_sbqdd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbqdd"]
+radius = 41.0
+height = 110.0
+
+[node name="FallingDeadFish" type="RigidBody2D" unique_id=1298823290]
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_sbqdd")
+
+[node name="DeadFish" type="Sprite2D" parent="." unique_id=1388294228]
+texture = ExtResource("1_cabkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554633687]
+shape = SubResource("CapsuleShape2D_sbqdd")
+
+[connection signal="body_entered" from="." to="." method="_on_fall_body_entered"]

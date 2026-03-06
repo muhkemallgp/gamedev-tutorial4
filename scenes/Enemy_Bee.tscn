@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dhxlf4nbt2uqt"]
+
+[ext_resource type="Texture2D" uid="uid://cmlt5c4ma3gsq" path="res://assets/kenney_platformerpack/PNG/Enemies/bee.png" id="1_8w0i6"]
+[ext_resource type="Script" uid="uid://bs5bo7qavonft" path="res://scenes/enemies_dead.gd" id="1_yftxq"]
+[ext_resource type="Texture2D" uid="uid://ceubp61yw13o4" path="res://assets/kenney_platformerpack/PNG/Enemies/bee_move.png" id="2_yftxq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhpyo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8w0i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yftxq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2qnd"]
+radius = 49.162994
+
+[node name="Enemy_Bee" type="RigidBody2D" unique_id=753638837]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_yftxq")
+
+[node name="Bee" type="AnimatedSprite2D" parent="." unique_id=337519408]
+sprite_frames = SubResource("SpriteFrames_dhpyo")
+autoplay = "default"
+frame_progress = 0.6063729
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=451694579]
+shape = SubResource("CircleShape2D_m2qnd")
+
+[connection signal="body_entered" from="." to="." method="_on_fall_body_entered"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ckroqvoeei6f8"]
+
+[ext_resource type="Texture2D" uid="uid://b7rncqp0d3w6n" path="res://assets/kenney_platformerpack/PNG/Items/flagBlue1.png" id="1_myhak"]
+[ext_resource type="Texture2D" uid="uid://b5dw8jdrd8wei" path="res://assets/kenney_platformerpack/PNG/Items/flagBlue2.png" id="2_0sjpy"]
+[ext_resource type="PackedScene" uid="uid://4dbsxxq3afn7" path="res://scenes/AreaTrigger.tscn" id="3_0sjpy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tp186"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_myhak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0sjpy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dhe8"]
+size = Vector2(111, 128)
+
+[node name="Flag_Level2" type="AnimatedSprite2D" unique_id=1806790028]
+sprite_frames = SubResource("SpriteFrames_tp186")
+autoplay = "default"
+frame_progress = 0.20702171
+
+[node name="AreaTrigger" parent="." unique_id=1778571777 instance=ExtResource("3_0sjpy")]
+position = Vector2(-46, -27)
+sceneName = "WinScreen"
+
+[node name="CollisionShape2D" parent="AreaTrigger" index="0" unique_id=224296372]
+position = Vector2(37.5, 27)
+shape = SubResource("RectangleShape2D_4dhe8")
+
+[editable path="AreaTrigger"]
