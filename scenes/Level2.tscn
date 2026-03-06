@@ -88,6 +88,6 @@ obstacle = ExtResource("7_xpq2v")
 [node name="Flag_Level2" parent="." unique_id=1806790028 instance=ExtResource("6_4p0dt")]
 position = Vector2(2522, -95)
 scale = Vector2(1.5, 1.5)
-frame_progress = 0.6056757
+frame_progress = 0.16162619
 
 [editable path="LoseArea"]
