@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ceqpn0eg7xixr"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_6bcno"]
+[ext_resource type="Texture2D" uid="uid://dvp0jyp34826e" path="res://assets/kenney_platformerpack/PNG/Items/coinGold.png" id="2_4noiy"]
+[ext_resource type="Texture2D" uid="uid://bn20yhmtoh852" path="res://assets/kenney_platformerpack/PNG/Items/coinBronze.png" id="2_vuicl"]
+[ext_resource type="Script" uid="uid://42i3vd6x6okx" path="res://scenes/btn_back.gd" id="3_4noiy"]
+
+[node name="ColorRect" type="ColorRect" unique_id=434474440]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5372549, 0.023529412, 0.050980393, 1)
+
+[node name="BtnBack" type="TextureButton" parent="." unique_id=529654704]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 459.0
+offset_right = 671.0
+offset_bottom = 587.0
+texture_normal = ExtResource("2_4noiy")
+texture_hover = ExtResource("2_vuicl")
+script = ExtResource("3_4noiy")
+
+[node name="Label" type="Label" parent="." unique_id=1174711461]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 245.0
+offset_right = 949.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 100
+text = "You're Dead!
+GAME OVER"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1773339470]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 573.0
+offset_right = 762.0
+offset_bottom = 599.0
+theme_override_fonts/font = ExtResource("1_6bcno")
+theme_override_font_sizes/font_size = 30
+text = "Back To Main Menu"
+
+[connection signal="pressed" from="BtnBack" to="BtnBack" method="_pressed"]

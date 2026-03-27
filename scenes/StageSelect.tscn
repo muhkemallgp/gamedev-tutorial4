@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://7qn8xcll1rxf"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_k456m"]
+[ext_resource type="Script" uid="uid://cn0u4jnbm5iro" path="res://scenes/go_level.gd" id="2_1tbhu"]
+[ext_resource type="Texture2D" uid="uid://bpomp7laf2qmf" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue_dead.png" id="2_eeirb"]
+[ext_resource type="Texture2D" uid="uid://ckhuhfacbfhs6" path="res://assets/kenney_platformerpack/PNG/Enemies/mouse_dead.png" id="3_eeirb"]
+
+[node name="ColorRect" type="ColorRect" unique_id=950443060]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.859, 1, 0.53, 1)
+
+[node name="Stage1" type="LinkButton" parent="." unique_id=1114340295]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 260.99997
+offset_right = 542.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0.78431374, 0.011764706, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 50
+text = "Level 1"
+script = ExtResource("2_1tbhu")
+level = "Level1"
+
+[node name="DeadFish" type="Sprite2D" parent="." unique_id=181424570]
+position = Vector2(230.50003, 277.5)
+scale = Vector2(0.8671875, 0.8515625)
+texture = ExtResource("2_eeirb")
+
+[node name="Stage2" type="LinkButton" parent="." unique_id=827340518]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 386.0
+offset_right = 562.0
+offset_bottom = 429.0
+theme_override_colors/font_color = Color(0.78431374, 0.6784314, 0.4, 1)
+theme_override_colors/font_hover_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 50
+text = "Level 2"
+script = ExtResource("2_1tbhu")
+level = "Level2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1713273321]
+position = Vector2(193.99998, 402.00006)
+rotation = -1.5707964
+scale = Vector2(0.85410213, 0.8865242)
+texture = ExtResource("3_eeirb")
+
+[node name="Label" type="Label" parent="." unique_id=2053300211]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 97.0
+offset_right = 1024.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0.14901961, 0.17254902, 1, 1)
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 50
+text = "Please Choose Stage You Want"
+
+[connection signal="pressed" from="Stage1" to="Stage1" method="_pressed"]

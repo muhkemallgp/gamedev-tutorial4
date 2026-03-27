@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bjrgilkw6m3gd"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://c7beu1m2nahcp" path="res://scenes/new_game_btn.gd" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://dhsqj8dybb7fq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_l72w3"]
+[ext_resource type="Script" uid="uid://cun0lxm2x62bh" path="res://scenes/stage_game_btn.gd" id="3_ow34m"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=461739708]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1384860916]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=693202921]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=292238392]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 50
+text = "Pinky Space"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1924720660]
+layout_mode = 2
+
+[node name="NewGameBtn" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=125450268]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.29411766, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 25
+text = "New Game"
+script = ExtResource("2_ow34m")
+scene_to_load = "Level1"
+
+[node name="StageGameBtn" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=888998278]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9490196, 0.29411766, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 25
+text = "Stage Game"
+script = ExtResource("3_ow34m")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=2050942186]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1273947026]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("3_l72w3")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGameBtn" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGameBtn" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StageGameBtn" to="HBoxContainer/VBoxContainer/VBoxContainer/StageGameBtn" method="_on_stage_select_pressed"]

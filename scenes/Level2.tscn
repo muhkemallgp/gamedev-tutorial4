@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
 
+[ext_resource type="Script" uid="uid://b8n7emak6swiv" path="res://scenes/level_2.gd" id="1_0jmjk"]
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_g8psw"]
 [ext_resource type="Texture2D" uid="uid://waka2vnagn14" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_sand.png" id="2_kkoku"]
 [ext_resource type="PackedScene" uid="uid://4dbsxxq3afn7" path="res://scenes/AreaTrigger.tscn" id="3_l6gr7"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckroqvoeei6f8" path="res://scenes/Flag_Level2.tscn" id="6_4p0dt"]
 [ext_resource type="Script" uid="uid://igempu80lb00" path="res://scenes/spawner_side.gd" id="6_qwp14"]
 [ext_resource type="PackedScene" uid="uid://dhxlf4nbt2uqt" path="res://scenes/Enemy_Bee.tscn" id="7_xpq2v"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="10_v8268"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6gr7"]
 texture = ExtResource("2_kkoku")
@@ -57,6 +59,7 @@ sources/1 = SubResource("TileSetAtlasSource_l6gr7")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sp0w3"]
 
 [node name="Level2" type="Node2D" unique_id=393777355]
+script = ExtResource("1_0jmjk")
 
 [node name="Player" parent="." unique_id=1322413036 instance=ExtResource("1_g8psw")]
 z_index = 1
@@ -92,6 +95,10 @@ frame_progress = 0.16162619
 
 [node name="AreaTrigger" parent="Flag_Level2" index="0" unique_id=1778571777]
 sceneName = "Final_Win_Screen"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1172180024]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1602746754 instance=ExtResource("10_v8268")]
 
 [editable path="LoseArea"]
 [editable path="Flag_Level2"]

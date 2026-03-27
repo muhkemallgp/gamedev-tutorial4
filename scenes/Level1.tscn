@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Script" uid="uid://covxgcegafv7h" path="res://scenes/level_1.gd" id="1_svatc"]
 [ext_resource type="Texture2D" uid="uid://cluh2ekc38ktx" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_dirt.png" id="2_bwv4p"]
 [ext_resource type="PackedScene" uid="uid://4dbsxxq3afn7" path="res://scenes/AreaTrigger.tscn" id="3_odhdn"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="4_dw26h"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="5_lrl65"]
 [ext_resource type="PackedScene" uid="uid://wh7l76mi0pv2" path="res://scenes/Falling_Dead_Fish.tscn" id="6_76388"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="8_ecr63"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -58,6 +60,7 @@ sources/1 = SubResource("TileSetAtlasSource_odhdn")
 size = Vector2(215, 480)
 
 [node name="Level1" type="Node2D" unique_id=1200220769]
+script = ExtResource("1_svatc")
 
 [node name="Player" parent="." unique_id=1275139118 instance=ExtResource("1")]
 z_index = 1
@@ -93,6 +96,10 @@ shape = SubResource("RectangleShape2D_lrl65")
 position = Vector2(1203, -246)
 script = ExtResource("5_lrl65")
 obstacle = ExtResource("6_76388")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1396323670]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1602746754 instance=ExtResource("8_ecr63")]
 
 [editable path="LoseArea"]
 [editable path="Rektorat/AreaTrigger"]

@@ -1,21 +1,33 @@
 [gd_scene format=3 uid="uid://g1b35y8xj8vv"]
 
+[ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1_x2vho"]
 [ext_resource type="Texture2D" uid="uid://dvp0jyp34826e" path="res://assets/kenney_platformerpack/PNG/Items/coinGold.png" id="1_x3j6d"]
 [ext_resource type="Texture2D" uid="uid://bn20yhmtoh852" path="res://assets/kenney_platformerpack/PNG/Items/coinBronze.png" id="2_aeugc"]
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="4_jsjd0"]
+[ext_resource type="Script" uid="uid://k5madhgka3yk" path="res://scenes/restart_button.gd" id="4_p01q4"]
 
 [node name="LoseScreen" type="Node2D" unique_id=1951641142]
 
-[node name="Button" type="TextureButton" parent="." unique_id=2122330683]
-offset_left = 459.92
-offset_top = 397.0
-offset_right = 587.92004
-offset_bottom = 525.0
+[node name="Dead" type="Sprite2D" parent="." unique_id=1918432877]
+position = Vector2(582, 321)
+scale = Vector2(0.8185713, 0.6114286)
+texture = ExtResource("1_x2vho")
+
+[node name="ReloadButton" type="TextureButton" parent="." unique_id=2122330683]
+offset_left = 545.0
+offset_top = 342.0
+offset_right = 673.0
+offset_bottom = 470.0
 texture_normal = ExtResource("1_x3j6d")
 texture_pressed = ExtResource("2_aeugc")
+script = ExtResource("4_p01q4")
 
 [node name="Label" type="Label" parent="." unique_id=841304781]
-offset_left = 447.0
-offset_top = 481.36
-offset_right = 604.0
-offset_bottom = 504.36
+offset_left = 516.0
+offset_top = 452.0
+offset_right = 708.0
+offset_bottom = 475.0
+theme_override_fonts/font = ExtResource("4_jsjd0")
 text = "Click The Button Plz!"
+
+[connection signal="pressed" from="ReloadButton" to="ReloadButton" method="_pressed"]
