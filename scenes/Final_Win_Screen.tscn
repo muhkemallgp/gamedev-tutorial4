@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckc0yx8l3wwq2"]
+
+[ext_resource type="PackedScene" uid="uid://vpcgqywhega1" path="res://scenes/WinScreen.tscn" id="1_qhwl8"]
+
+[node name="Final_Win_Screen" unique_id=1820052320 instance=ExtResource("1_qhwl8")]
+target_level = "Level1"

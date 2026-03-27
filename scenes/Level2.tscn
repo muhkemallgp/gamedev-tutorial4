@@ -90,4 +90,9 @@ position = Vector2(2522, -95)
 scale = Vector2(1.5, 1.5)
 frame_progress = 0.16162619
 
+[node name="AreaTrigger" parent="Flag_Level2" index="0" unique_id=1778571777]
+sceneName = "Final_Win_Screen"
+
 [editable path="LoseArea"]
+[editable path="Flag_Level2"]
+[editable path="Flag_Level2/AreaTrigger"]
